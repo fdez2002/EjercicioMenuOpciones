@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EjercicioMenuOpciones</string>
+    <string name="textView1">Ciclos Formativos Grado Superior</string>
+    <string name="textView2Info">Informática</string>
+
+    <string name="menu_dam">DAM</string>
+    <string name="menu_asir">ASIR</string>
+    <string name="menu_daw">DAW</string>
+</resources>
