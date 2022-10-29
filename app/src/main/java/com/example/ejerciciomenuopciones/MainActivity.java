@@ -19,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ScrollingActivity.class));
                 break;
             case R.id.menuAsir:
-                startActivity(new Intent(MainActivity.this, ScrollingActivity.class));
+
                 break;
             default: return super.onOptionsItemSelected(item);
 
