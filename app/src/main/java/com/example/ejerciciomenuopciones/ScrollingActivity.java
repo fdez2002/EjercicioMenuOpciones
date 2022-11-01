@@ -31,8 +31,9 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle(getIntent().getStringExtra("key"));
+        toolBarLayout.setTitle(getIntent().getStringExtra("key"));//añadimos el titulo
 
+        //Dependiendo del titulo tendra un texto u otro
         switch (getIntent().getStringExtra("key")){
             case  "CFGS DAM":
                 binding.textViewTextoLargo.setText("\"Que es DAM.\\n\\n\"\n" +

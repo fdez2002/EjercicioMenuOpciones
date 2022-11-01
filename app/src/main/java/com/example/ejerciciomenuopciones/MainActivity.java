@@ -30,10 +30,15 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.imageView7.setImageResource(R.drawable.computer);
-        binding.imageView8.setImageResource(R.drawable.web);
-        binding.imageView9.setImageResource(R.drawable.linked);
+        binding.imageView7.setImageResource(R.drawable.computer);//asignamos la imagen
+        binding.imageView8.setImageResource(R.drawable.web);//asignamos la imagen
+        binding.imageView9.setImageResource(R.drawable.linked);//asignamos la imagen
 
+        /*
+        Vamos a añadir en primer lugar un menú contextual que aparezca al pulsar s
+        obre la etiqueta de texto. Para ello, lo primero que vamos a hacer es indicar
+        en el método onCreate() de nuestra actividad principal que la etiqueta tendrá
+         */
         registerForContextMenu(binding.imageView7);
         registerForContextMenu(binding.imageView8);
         registerForContextMenu(binding.imageView9);
@@ -45,11 +50,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
     //Menu pulsado
+    /*
+    A continuación, igual que hacíamos con onCreateOptionsMenu() para los menús básicos,
+    vamos a sobreescribir en nuestra actividad el evento encargado de construir los menús
+    contextuales asociados a los diferentes controles de la aplicación. En este caso el evento
+    se llama onCreateContextMenu(), y a diferencia de onCreateOptionsMenu() éste se llama cada vez
+    que se necesita mostrar un menú contextual, y no una sola vez al inicio de la aplicación.
+     */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.menu, menu);
     }
+    /*
+    A continuación, igual que hacíamos con onCreateOptionsMenu() para los menús básicos,
+    vamos a sobreescribir en nuestra actividad el evento encargado de construir los menús
+    contextuales asociados a los diferentes controles de la aplicación. En este caso el evento
+    se llama onCreateContextMenu(), y a diferencia de onCreateOptionsMenu() éste se llama cada vez
+     que se necesita mostrar un menú contextual, y no una sola vez al inicio de la aplicación.
+     */
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         Intent intent = new Intent(this, ScrollingActivity.class);
@@ -74,12 +93,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Menu toolbar
+    /*
+    Añadimos las instancias del menu
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    /*
+    Cuando el selecciona una opcion, el sistema llama al este metodo, que pasa el MenuItem seleccionado
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
